@@ -1,4 +1,4 @@
-#Keycloak training
+# Keycloak training
 
 ### Create and execute a Keycloak docker container
 docker run -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin jboss/keycloak --expose 8180:8080
@@ -41,7 +41,7 @@ security.oauth2.resource.token-info-uri=${rest.security.issuer-uri}/protocol/ope
 security.oauth2.resource.user-info-uri=${rest.security.issuer-uri}/protocol/openid-connect/userinfo
 security.oauth2.resource.jwt.key-value=-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAseblZ6ZrVMv+riHbA/ltoDqOemvP292oMpvfTp1+36tK8drKGV/mUuLLAdF+Vw9yuBtyq7hsqpEL6FlL/M1TKHbartHhzYgAq9xrLQ8omIzkNoUdbxIRxu+u+F0enCqRgpWaX9YMncsLt3tUwfhNiTwjJORONrsZcWjCpT96U4qCbkqCGFyy4P2zpNs60LMTSx9pN8UeyI2xrQ0qmhvAmtTt2oH1YKSzA4cqaA+djVf0uF1tfTOe1qNi14dbS9vNZYiaQK3cBvLVKvItiLLjOtAUW42MMSBgvdpB6HMbVLmylYCe6psCGD4E1EwIrHTVBqOBb2gTyl8B4Nb8jTe66wIDAQAB\n-----END PUBLIC KEY-----
 
-**Extract the Public Key from **Realm Settings -> Keys -> Public Key**
+>> Extract the Public Key from *Realm Settings -> Keys -> Public Key*
 
 #### Add the spring oauth dependency
 
@@ -55,21 +55,21 @@ security.oauth2.resource.jwt.key-value=-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqh
 
 ### Classes created to extract and configure the JWT authentication:
 
-SecurityProperties
+- SecurityProperties
 	- Extract CORS attributes from application.properties;
 
-JwtAccessTokenCustomizer
+- JwtAccessTokenCustomizer
 	- Extract the JWT payload data as username, userId, etc...
 
-SecurityConfigurer
+- SecurityConfigurer
 	- Set the CORS configuration;
 	- Set security resource;
 	- Set endpoint coverage by authorization;
 	- Set the JwtAccessTokenCustomizer to read roles and user_name;
 
-SecurityContextUtils
+- SecurityContextUtils
 	- Get the user data extract from JWT;
 
-OAuth2RestTemplateConfigurer
+- OAuth2RestTemplateConfigurer
 	- It generates and set a token into restTemplate context, it's usually used through the microservices communication;
 
