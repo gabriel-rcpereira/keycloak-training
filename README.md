@@ -1,8 +1,11 @@
 # Keycloak training
 
 ### Create and execute a Keycloak docker container
-docker run -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin jboss/keycloak --expose 8180:8080
+Access the keycloak-test folder and run:
+`docker-compose up -d`
 
+### Access Keycloak console using the top secret user and password(admin-admin)
+http://localhost:8180/
 
 ### Configuring Keycloak server
 - Create a **Realm** named **dev**;
@@ -72,4 +75,12 @@ security.oauth2.resource.jwt.key-value=-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqh
 
 - OAuth2RestTemplateConfigurer
 	- It generates and set a token into restTemplate context, it's usually used through the microservices communication;
+
+
+## References
+- https://www.baeldung.com/spring-security-oauth-jwt
+
+
+## Next steps
+[ ] - Update the Spring Security class
 
