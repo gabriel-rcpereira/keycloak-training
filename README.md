@@ -83,7 +83,8 @@ security.oauth2.resource.jwt.key-value=-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqh
 
 
 ## Next steps
-* [ ] - Update the Spring Security class
+* [x] - Update Spring Security class;
+* [ ] - Extract and return username from JWT;
 
 
 
