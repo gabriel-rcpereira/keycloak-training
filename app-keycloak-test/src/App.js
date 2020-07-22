@@ -16,14 +16,17 @@ function App() {
   }
 
   const handlerClickRequestApi = () => {
-    const token = localStorage.getItem('react-token');
+		const token = localStorage.getItem('react-token');
 
     axios.get('http://localhost:8085/api/v1/users/username', {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       .then(response => {
-        console.log(response.data);
-        setResponses([...responses, response.data]);
+				if (response.status === 200) {
+					setResponses([...responses, response.data]);
+					return;
+				}
+				console.log('Error');
       });
   };
 

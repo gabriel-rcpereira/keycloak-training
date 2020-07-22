@@ -8,7 +8,7 @@ Access the keycloak-test folder and run:
 http://localhost:8180/
 
 ### Configuring Keycloak server
-- Create a **Realm** named **dev**;
+- Create a **Realm** named **Lab**;
 - Create a **Client** named **ui-employee-service**;
 	- Set the **Client Protocol** as **openid-connect**;
 	- Set the **Access Type** as **public**;
@@ -55,7 +55,6 @@ security.oauth2.resource.jwt.key-value=-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqh
 </dependency>
 
 
-
 ### Classes created to extract and configure the JWT authentication:
 
 - SecurityProperties
@@ -79,8 +78,13 @@ security.oauth2.resource.jwt.key-value=-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqh
 
 ## References
 - https://www.baeldung.com/spring-security-oauth-jwt
+- https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-security
+- https://dzone.com/articles/spring-boot-security-json-web-tokenjwt-hello-world
 
 
 ## Next steps
-[ ] - Update the Spring Security class
+* [ ] - Update the Spring Security class
+
+
+
 

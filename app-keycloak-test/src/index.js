@@ -34,7 +34,7 @@ keycloak.init({ onLoad: initOptions.onLoad }).success((auth) => {
   localStorage.setItem("react-refresh-token", keycloak.refreshToken);
 
   setTimeout(() => {
-      keycloak.updateToken(70).success((refreshed) => {
+      keycloak.updateToken(100000000).success((refreshed) => {
           if (refreshed) {
               console.debug('Token refreshed' + refreshed);
           } else {
